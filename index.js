@@ -6,7 +6,7 @@ const text_events = require('./socket/document.events')
 
 const io = require('socket.io')(server,{
   cors:{
-    origin: process.env.CLIENT_URL
+    origin: '*'
   }
 })
 
