@@ -5,6 +5,7 @@ const mongoose = require('mongoose')
 const text_events = require('./socket/document.events')
 
 const io = require('socket.io')(server,{
+  path:'/meowdocs',   
   cors:{
     origin: process.env.CLIENT_URL
   }
@@ -21,10 +22,12 @@ io.on('connection',(socket)=>{
 app.get('/',(req,res)=>{
   res.status(200).send('this is backend of meow docs')
 })
+
+const PORT = porcess.env.PORT || 80
 const start = async ()=>{
  await  mongoose.connect(process.env.DB_URL,{useNewUrlParser:true})
-  server.listen(3000, () => {
-    console.log('listening on port 3000')
+  server.listen(PORT, () => {
+    console.log(`lisenning on port ${PORT}`)
   })
 }
 
