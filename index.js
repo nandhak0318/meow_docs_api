@@ -5,7 +5,6 @@ const mongoose = require('mongoose')
 const text_events = require('./socket/document.events')
 
 const io = require('socket.io')(server,{
-  path:'/meowdocs',   
   cors:{
     origin: process.env.CLIENT_URL
   }
