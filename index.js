@@ -23,7 +23,7 @@ app.get('/',(req,res)=>{
   res.status(200).send('this is backend of meow docs')
 })
 
-const PORT = porcess.env.PORT || 80
+const PORT = process.env.PORT || 80
 const start = async ()=>{
  await  mongoose.connect(process.env.DB_URL,{useNewUrlParser:true})
   server.listen(PORT, () => {
